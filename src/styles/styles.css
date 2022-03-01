@@ -97,7 +97,7 @@ nav img {
   padding: 10px;
 }
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 600px) {
   .pokedex-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
