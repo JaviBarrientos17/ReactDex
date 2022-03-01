@@ -1,4 +1,5 @@
 import React from "react";
+import { Card } from 'react-bootstrap';
 import Pagination from "./Pagination";
 import Pokemon from "./Pokemon";
 
@@ -16,28 +17,30 @@ const Pokedex = (props) => {
   };
 
   return (
-    <div>
-      <div className="header">
-        <br></br>
-        <div>
-          <Pagination
-            page={page + 1}
-            totalPages={total}
-            onLeftClick={lastPage}
-            onRightClick={nextPage}
-          />
+    <Card className="card">
+      <div>
+        <div className="header">
+          <br></br>
+          <div>
+            <Pagination
+              page={page + 1}
+              totalPages={total}
+              onLeftClick={lastPage}
+              onRightClick={nextPage}
+            />
+          </div>
         </div>
-      </div>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <div className="pokedex-grid">
-          {pokemons.map((pokemon, idx) => {
-            return <Pokemon pokemon={pokemon} key={pokemon.name} />;
-          })}
-        </div>
-      )}
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <div className="pokedex-grid">
+            {pokemons.map((pokemon, idx) => {
+              return <Pokemon pokemon={pokemon} key={pokemon.name} />;
+            })}
+          </div>
+        )}
     </div>
+    </Card>
   );
 };
 
